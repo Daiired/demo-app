@@ -1,11 +1,11 @@
 pipeline {
   agent any
   stages {
-    stage('Checkout') {
-      steps {
-        git url: 'https://github.com/Daiired/demo-app.git'
-      }
-    }
+	stage('Checkout') {
+	  steps {
+	    git branch: 'main', url: 'https://github.com/Daiired/demo-app.git'
+	  }
+	}
     stage('Compile & Test') {
       steps {
         bat 'mvn clean test'
